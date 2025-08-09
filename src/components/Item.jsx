@@ -6,7 +6,7 @@ const Item = ({ product }) => {
   return (
     <div className="card h-100">
       <img
-        src={product.image || "/assets/default.png"}
+        src={product.image || "/assets/img/default.png"}
         className="card-img-top"
         alt={product.title}
       />
