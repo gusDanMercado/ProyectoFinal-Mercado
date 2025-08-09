@@ -2,7 +2,7 @@
 import React from "react";
 import { useCart } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
-import CheckoutForm from "./CheckoutForm";
+import CheckoutForm from "../components/CheckoutForm";
 
 const Cart = () => {
   const { cart, removeItem, clear, getTotalQty, getTotalPrice } = useCart();
