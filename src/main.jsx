@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { CartProvider } from "./contexts/CartContext";
+import { CartProvider } from "./components/CartContext.jsx";
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 createRoot(document.getElementById("root")).render(
@@ -16,3 +16,5 @@ createRoot(document.getElementById("root")).render(
     </CartProvider>
   </BrowserRouter>
 );
+
+//import "./uploadProducts"; // comento todo lo anterior y lo ejecute una unica vez para agregar mis productos al FireStore (los agrego bien)

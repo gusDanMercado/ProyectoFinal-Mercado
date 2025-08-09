@@ -1,45 +1,46 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getProducts, getProductsByCategory } from "../products";
-import ItemList from "../components/ItemList";
-
+import { useState, useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
-import { collection, getDocs, query, where } from "firebase/firestore";
 
-const ItemListContainer = ({ saludo }) => {
-  const [items, setItems] = useState([]);
+const ItemListContainer = () => {
+  const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { categoryId } = useParams();
 
   useEffect(() => {
-    setLoading(true);
-    async function fetchProducts() {
+    const obtenerProductos = async () => {
       try {
-        const col = collection(db, "products");
-        let q = col;
-        if (categoryId) q = query(col, where("category", "==", categoryId));
-        const snapshot = await getDocs(q);
-        const products = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setItems(products);
-      } catch (err) {
-        console.error(err);
+        const productosRef = collection(db, "productos");
+        const snapshot = await getDocs(productosRef);
+        if (snapshot.empty) {
+          console.log("No hay productos");
+        } else {
+          const lista = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          setProductos(lista);
+        }
+      } catch (error) {
+        console.error("Error al obtener productos:", error);
       } finally {
         setLoading(false);
       }
-    }
-    fetchProducts();
-  }, [categoryId]);
+    };
+
+    obtenerProductos();
+  }, []);
+
+  if (loading) return <p>Cargando productos...</p>;
+  if (productos.length === 0) return <p>No hay productos en esta categoría.</p>;
 
   return (
-    <div className="container mt-4">
-      {saludo && <h2 className="mb-3">{saludo}</h2>}
-      {loading ? <p>Cargando productos...</p> : <ItemList items={items} />}
-      {!loading && items.length === 0 && (
-        <p>No hay productos en esta categoría.</p>
-      )}
+    <div>
+      {productos.map((prod) => (
+        <div key={prod.id}>
+          <h3>{prod.nombre}</h3>
+          <p>Precio: {prod.precio}</p>
+        </div>
+      ))}
     </div>
   );
 };

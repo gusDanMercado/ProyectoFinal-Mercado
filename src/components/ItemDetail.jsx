@@ -1,7 +1,7 @@
 // ItemDetail.jsx
 import React, { useState } from "react";
 import ItemCount from "./ItemCount";
-import { useCart } from "../contexts/CartContext";
+import { useCart } from "./CartContext";
 
 const ItemDetail = ({ product }) => {
   const { addItem } = useCart();

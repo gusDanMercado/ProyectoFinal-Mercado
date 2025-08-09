@@ -1,6 +1,6 @@
 // Cart.jsx
 import React from "react";
-import { useCart } from "../contexts/CartContext";
+import { useCart } from "./CartContext";
 import { Link } from "react-router-dom";
 import CheckoutForm from "../components/CheckoutForm";
 

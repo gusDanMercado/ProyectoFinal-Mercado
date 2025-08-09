@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/img/milogo.png";
 
 import { Link } from "react-router-dom";
-import { useCart } from "../contexts/CartContext";
+import { useCart } from "./CartContext";
 
 const CartWidget = () => {
   return (

@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Auriculares Bluetooth",
+    "description": "Auriculares inalámbricos con cancelación de ruido y batería de larga duración.",
+    "price": 15000,
+    "category": "electronica",
+    "stock": 12,
+    "image": "/assets/img/auriculares.jpg"
+  },
+  {
+    "title": "Camiseta Algodón",
+    "description": "Camiseta unisex 100% algodón, disponible en varios colores.",
+    "price": 4500,
+    "category": "ropa",
+    "stock": 25,
+    "image": "/assets/img/camiseta.jpg"
+  },
+  {
+    "title": "Laptop Gamer",
+    "description": "Laptop de alto rendimiento con tarjeta gráfica dedicada y 16GB de RAM.",
+    "price": 320000,
+    "category": "electronica",
+    "stock": 5,
+    "image": "/assets/img/laptop.jpg"
+  },
+  {
+    "title": "Libro: JavaScript Avanzado",
+    "description": "Guía completa para dominar JavaScript y frameworks modernos.",
+    "price": 9000,
+    "category": "libros",
+    "stock": 10,
+    "image": "/assets/img/libro-js.jpg"
+  },
+  {
+    "title": "Zapatillas Running",
+    "description": "Zapatillas deportivas con amortiguación extra y suela antideslizante.",
+    "price": 28000,
+    "category": "ropa",
+    "stock": 15,
+    "image": "/assets/img/zapatillas.jpg"
+  }
+]
