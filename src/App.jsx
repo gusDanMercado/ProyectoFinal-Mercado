@@ -12,7 +12,6 @@ import { Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
 import NotFound from "./components/NotFound";
 
-import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
 
 function App() {
