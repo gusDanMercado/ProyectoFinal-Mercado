@@ -9,7 +9,7 @@ const ItemListContainer = () => {
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
-        const productosRef = collection(db, "productos");
+        const productosRef = collection(db, "products");
         const snapshot = await getDocs(productosRef);
         if (snapshot.empty) {
           console.log("No hay productos");
@@ -37,8 +37,8 @@ const ItemListContainer = () => {
     <div>
       {productos.map((prod) => (
         <div key={prod.id}>
-          <h3>{prod.nombre}</h3>
-          <p>Precio: {prod.precio}</p>
+          <h3>{prod.description}</h3>
+          <p>Precio: {prod.price}</p>
         </div>
       ))}
     </div>
